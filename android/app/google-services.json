@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "715657854719",
+    "project_id": "tpc-app-dc3ca",
+    "storage_bucket": "tpc-app-dc3ca.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:715657854719:android:b1864876b53b53963e56ca",
+        "android_client_info": {
+          "package_name": "com.example.final_tpc_app"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCuPw0c_qfU8ZpLdjG79LCyDIR8MJIXxVc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

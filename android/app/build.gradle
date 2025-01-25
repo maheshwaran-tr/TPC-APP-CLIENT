@@ -1,0 +1,52 @@
+plugins {
+    id "com.android.application"
+    // START: FlutterFire Configuration
+    id 'com.google.gms.google-services'
+    // END: FlutterFire Configuration
+    id "kotlin-android"
+    // The Flutter Gradle Plugin must be applied after the Android and Kotlin Gradle plugins.
+    id "dev.flutter.flutter-gradle-plugin"
+}
+
+android {
+    namespace = "com.example.final_tpc_app"
+    compileSdk = flutter.compileSdkVersion
+    ndkVersion = flutter.ndkVersion
+
+    compileOptions {
+        sourceCompatibility = JavaVersion.VERSION_1_8
+        targetCompatibility = JavaVersion.VERSION_1_8
+    }
+
+    kotlinOptions {
+        jvmTarget = JavaVersion.VERSION_1_8
+    }
+
+    defaultConfig {
+        applicationId = "com.example.final_tpc_app"
+        minSdk = flutter.minSdkVersion
+        targetSdk = flutter.targetSdkVersion
+        versionCode = flutter.versionCode
+        versionName = flutter.versionName
+    }
+
+    buildTypes {
+        release {
+            signingConfig = signingConfigs.debug
+        }
+    }
+
+    dependencies {
+
+        
+        // Add the desugar_jdk_libs dependency to enable Java 8 features
+        implementation 'com.android.tools:desugar_jdk_libs:1.1.5'
+
+        // Add the Flutter Local Notifications plugin dependencies if you haven't already
+        implementation 'com.google.firebase:firebase-messaging:23.0.0' // Or your desired version
+    }
+}
+
+flutter {
+    source = "../.."
+}
