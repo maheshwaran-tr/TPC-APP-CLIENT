@@ -1,7 +1,7 @@
-import 'package:final_tpc_app/app/controllers/admin_pages_controller/drawer_controller/HomeScreenController/PostNewJob/post_new_job.dart';
 import 'package:final_tpc_app/app/controllers/admin_pages_controller/drawer_controller/admin_dashboard_controller.dart';
 import 'package:final_tpc_app/app/controllers/theme_controller/app_color_controller.dart';
 import 'package:final_tpc_app/app/data/models/admin_model.dart';
+import 'package:final_tpc_app/app/ui/pages/admin_pages/drawer/HomeScreen/AddCompany/add_company.dart';
 import 'package:final_tpc_app/app/ui/pages/admin_pages/drawer/HomeScreen/DeptStudentList/department_list.dart' as dept_student_list;
 import 'package:final_tpc_app/app/ui/pages/admin_pages/drawer/HomeScreen/NonWillingList/department_list.dart' as dept_student_nonwilling_list;
 import 'package:final_tpc_app/app/ui/pages/admin_pages/drawer/admin_menupage.dart';
@@ -10,7 +10,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:flutter_zoom_drawer/flutter_zoom_drawer.dart';
-import 'package:final_tpc_app/app/utils/screen_utils.dart'; // Importing ScreenUtils
+import 'package:final_tpc_app/app/utils/screen_utils.dart';
+
+import 'HomeScreen/JobPost/jobpost.dart'; // Importing ScreenUtils
 
 class AdminDash extends StatelessWidget {
   final Admin admin;
@@ -147,6 +149,9 @@ class AdminDash extends StatelessWidget {
                             } else if (controller.catNames[index] ==
                                 "Non Willing Students") {
                               Get.to(() => dept_student_nonwilling_list.DepartmentList());
+                            }else if (controller.catNames[index] ==
+                                "Add Staff") {
+                              Get.to(() => AddCompanyPage());
                             }
                             // Future navigation code placeholder
                           },
@@ -265,6 +270,7 @@ class AdminDash extends StatelessWidget {
   }
 
   void _navigateToCategory(String category) {
+    Get.to(() => AddCompanyPage());
     // if (category == "Add Staff") {
     //   Get.to(() => AddStaffPage());
     // } else if (category == "Dept Student List") {

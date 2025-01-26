@@ -1,6 +1,7 @@
 import 'dart:convert';
 
 import 'package:http/http.dart' as http;
+import '../models/RequestModels/drive_request_model.dart';
 import '../token/token_storage.dart';
 import '../models/drive_model.dart';  // Correct model for Drive
 import 'urls.dart';
@@ -59,7 +60,7 @@ class DriveRequests {
     }
   }
 
-  static Future<Drive> createDrive(Drive drive) async {
+  static Future<bool> createDrive(Drive drive) async {
     try {
       String token = await TokenStorage.getAccessToken();
 
@@ -75,13 +76,16 @@ class DriveRequests {
             'Content-Type': 'application/json',
           },
           body: jsonEncode(drive.toJson()));
+      print(response.statusCode);
       if (response.statusCode == 201) {
-        return Drive.fromJson(jsonDecode(response.body));
+        return true;
       } else {
-        throw Exception('Failed to create drive');
+        print('Failed to create drive');
+        return false;
       }
     } catch (e) {
-      throw Exception('Failed to create drive: $e');
+      print('Failed to create drive $e');
+      return false;
     }
   }
 
