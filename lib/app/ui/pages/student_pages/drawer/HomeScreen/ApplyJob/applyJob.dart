@@ -189,7 +189,7 @@ class ApplyJobPage extends StatelessWidget {
                   color: themeController.textColor),
             ),
             SizedBox(height: 8.h),
-            ...job.requiredSkills!.map((requirement) {
+            ...job.requiredSkills.map((requirement) {
               return _buildRequirementItem(requirement);
             }),
             Spacer(),

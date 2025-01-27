@@ -69,7 +69,7 @@ class Drive {
       driveDate: json['drive_date'] != null ? DateTime.parse(json['drive_date']) : null,
       eligible10thMark: json['eligible_10th_mark'],
       eligible12thMark: json['eligible_12th_mark'],
-      eligibleCgpa: json['eligible_cgpa'] != null ? json['eligible_cgpa'].toDouble() : null,
+      eligibleCgpa: json['eligible_cgpa']?.toDouble(),
       eligibleCurrentArrears: json['eligible_current_arrears'],
       eligibleHistoryOfArrears: json['eligible_history_of_arrears'],
       jobType: json['job_type'],
